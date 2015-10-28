@@ -1,0 +1,48 @@
+<form class="form-horizontal">
+<%= form_for(@empresa) do |f| %>
+  <% if @empresa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
+
+      <ul>
+        <li><%= message %></li>
+      <% end %>
+      <% @empresa.errors.full_messages.each do |message| %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rut %><br>
+    <%= f.text_field :rut %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="form-control">
+    <label for="rubro">rubro</label>
+  <input type="text" class="form-control" id="rubro"  placeholder="rubro" >
+
+  </div>
+
+
+<div class="field">
+    <%= f.label :direccion %><br>
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</form>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label for="text" class="col-sm-2 control-label">rut</label>
+
+    <div class="col-sm-10">
+
+      <input type="email" class="form-control" id="text" placeholder="RUT">
+    </div>
+  </div>
